@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
-//    private static final SessionFactory sessionFactory = Util.getSessionFactory();
     private String sql;
     public UserDaoHibernateImpl() {
 

@@ -20,22 +20,10 @@ public class Util {
     private static final String URL = "jdbc:mysql://localhost:3306/mydb";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
-    private static Connection connection;
     private static SessionFactory sessionFactory;
 
 
-    public static Connection getConnection() {
-        connection = null;
-        try {
-            Driver driver = new com.mysql.cj.jdbc.Driver();
-            DriverManager.registerDriver(driver);
-            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return connection;
-    }
 
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
@@ -71,9 +59,6 @@ public class Util {
         return sessionFactory;
     }
 
-    public static void stopSession() {
-        sessionFactory.close();
-    }
 
 
 

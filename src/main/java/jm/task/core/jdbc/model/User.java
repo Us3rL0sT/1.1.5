@@ -7,7 +7,6 @@ import java.util.Objects;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
     private Long id;
 
     @Column(name="name")
@@ -29,10 +28,7 @@ public class User {
         this.age = age;
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
+
 
     public Long getId() {
         return id;
@@ -77,5 +73,10 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, lastName, age);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }
